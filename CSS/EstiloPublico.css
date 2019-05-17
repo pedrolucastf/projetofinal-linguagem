@@ -1,0 +1,104 @@
+body
+{
+    background-color: #D9D9D9;
+}
+
+#topo img 
+{
+    margin: 1% 46% auto;
+    padding: 10px;
+    display: block;
+   
+}
+
+#menu
+{
+    margin: 0 5%;
+    width: 90%;
+}
+
+#corpo h1
+{
+    margin: 0% 5%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#corpo img
+{
+    margin: 0% auto;
+    padding: 0% 2% 0%;
+    display: block;
+}
+
+#corpo #Linguagem img
+{
+    margin: -20px auto;
+    width: 20%;
+}
+
+#corpo #textoQuemSomos
+{
+    max-width: 96%;
+    text-align: justify;
+    margin: 0 5%;
+    padding: 2%;
+    font-size: 20px;
+}
+
+#corpo #textoLinguagem
+{
+    max-width: 96%;
+    text-align: center;
+    margin: 0 5%;
+    padding: 2%;
+}
+
+#corpo .noticia
+{
+    border: solid 1px;
+    margin: 2% 25%;
+    width: 50%;
+}
+
+#corpo .noticia img
+{
+    float: left;
+    max-width: 80px;
+    max-height: 80px;
+    margin: 2%;
+    padding: 5%;
+}
+
+#corpo .noticia p
+{
+    text-align: justify;
+    margin: 0 2%;
+}
+
+#contato
+{
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid #000;
+}
+
+    
+#rodape
+{
+    margin: 0 0 10%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#login
+{
+    border: 1px solid;
+    width: 20%;
+    text-align: center;
+    margin: 10% auto;
+    border-radius: 6px;
+    box-shadow: 2px 2px;
+    padding: 2%;
+}
