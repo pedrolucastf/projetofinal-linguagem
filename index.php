@@ -47,8 +47,19 @@ and open the template in the editor.
         
         <div id="corpo">
             <h1>Bem vindo ao nosso site</h1>
-            <iframe width="850" height="650" src="newhtml.html">
-            </iframe>
+                   <img src="Imagem/site.png" alt="Linguagens" usemap="#Linguagens"/>
+            
+            <map name="Linguagens">
+                <!-- ESQUERDA -->
+                <area shape="rect" coords="54, 100, 130, 20" alt="Linguagem C" href="LinguagemC.php">
+                <area shape="rect" coords="140, 250, 230, 150" alt="Linguagem C#" href="LinguagemCSharp.php">
+                <area shape="rect" coords="54, 300, 130, 380" alt="Linguagem C++" href="LinguagemC++.php">
+                
+                <!-- DIREITA -->
+                <area shape="rect" coords="650, 80, 550, 150" alt="Linguagem Ruby" href="LinguagemRuby.php">
+                <area shape="rect" coords="780, 210, 680, 300" alt="Linguagem Ruby" href="LinguagemPython.php">
+                
+            </map>
             
         </div>
         
