@@ -1,0 +1,79 @@
+body
+{
+    background-color: #D9D9D9;
+}
+
+#topo img 
+{
+    margin: 1% 46% auto;
+    padding: 10px;
+    display: block;
+   
+}
+
+#menu
+{
+    margin: 0 5%;
+    width: 90%;
+}
+
+#corpo h1
+{
+    margin: 0% 5%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#corpo #FormQuemSomos textArea
+{
+    margin: 0 20% auto;
+    width: 1100px;
+    height: 600px;
+}
+
+#corpo #FormQuemSomos #inputQuemSomos
+{
+    margin: 0 43% auto;
+}
+
+#corpo table.table.table-striped tbody tr td textArea
+{
+    width: 400px;
+    height: 200px;
+
+}
+
+#corpo .noticia
+{
+    border: solid 1px;
+    margin: 2% 25%;
+    width: 50%;
+}
+
+#corpo .noticia img
+{
+    float: left;
+    max-width: 80px;
+    max-height: 80px;
+    margin: 2%;
+    padding: 5%;
+}
+
+#corpo .noticia p
+{
+    text-align: justify;
+    margin: 0 5%;
+}
+
+#corpo .noticia p textArea
+{
+    width: 700px;
+    height: 50px;
+}
+
+#rodape
+{
+    margin: 0 0 10%;
+    text-align: center;
+    font-weight: bold;
+}
