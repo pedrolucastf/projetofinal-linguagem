@@ -17,11 +17,29 @@ body
     width: 90%;
 }
 
+#corpo img
+{
+    margin: 0% auto;
+    padding: 0% 2% 0%;
+    display: block;
+}
+
+#corpo #Linguagem img
+{
+    margin: -20px auto;
+    width: 20%;
+}
+
 #corpo h1
 {
     margin: 0% 5%;
     text-align: center;
     font-weight: bold;
+}
+
+#corpo h2
+{
+    text-align: center;
 }
 
 #corpo #FormQuemSomos textArea
@@ -41,6 +59,18 @@ body
     width: 400px;
     height: 200px;
 
+}
+
+#corpo #formNovoUsuario
+{
+    margin: 0 45.6%;
+}
+
+#corpo #formNovoUsuario #buttonNovoUsuario
+{
+    text-align: center;
+    width: 200%;
+    margin-left: -47%;
 }
 
 #corpo .noticia

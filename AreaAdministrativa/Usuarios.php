@@ -38,39 +38,63 @@ and open the template in the editor.
                         <li><a href="index.php">Inicio</a></li>
                         <li><a href="QuemSomos.php">Quem somos</a></li>
                         <li><a href="Noticias.php">Noticias</a></li>
-                        <li class="active"><a href="Contato.php">Contato</a></li>
-                        <li><a href="Usuarios.php">Usuários</a></li>
+                        <li><a href="Contato.php">Contato</a></li>
+                        <li class="active"><a href="Usuarios.php">Usuários</a></li>
                         <li><a href="../index.php">Sair</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         
-        <div id="corpo">
-            <h1>Contato</h1>
+        <div id="corpo">   
+            <h2>Novo usuário</h2>
+                <!-- EMMET -->
+                <div id="formNovoUsuario">
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="GET">
+                    <p>ID</p>
+                    <input name="id" type="text">
+                    <p>Nome completo</p>
+                    <input name="nome" type="text" autofocus="">
+                    <p>Email</p>
+                    <input name="email"type="text">
+                    <p>Usuario</p>
+                    <input name="usuario"type="text">
+                    <p>Senha</p>
+                    <input name="senha"type="password">
+                    <br>
+                    <br>
+                    <div id="buttonNovoUsuario">
+                    <input name="opcao"type="submit" value="INSERIR">
+                    <input name="opcao"type="submit" value="ATUALIZAR">
+                    <input name="opcao"type="submit" value="DELETAR">
+                    </div>
+                </form>
+            </div>
+                <hr>
+            <h1>Usuários</h1>
                     <table class="table table-striped">
                     <tr>
+                        <td>ID</td>
                         <td>Nome completo</td>
                         <td>Email</td>
-                        <td>Telefone</td>
-                        <td>Comentário</td>
+                        <td>Usuario</td>
                         <td colspan="2">OPÇOES</td>
                     </tr>
 
                     <tr>
+                        <td>1</td>
                         <td>Cesar</td>
                         <td>cesar@cesar.com</td>
-                        <td>(99)9999-9999</td>
-                        <td></td>
+                        <td>cesar</td>
                         <td>[editar]</td>
                         <td>[excluir]</td>
                     </tr>
 
                      <tr>
+                        <td>2</td>
                         <td>Pedro</td>
                         <td>pedro@pedro.com</td>
-                        <td>(99)9999-9999</td>
-                        <td></td>
+                        <td>pedro</td>
                         <td>[editar]</td>
                         <td>[excluir]</td>
                     </tr>

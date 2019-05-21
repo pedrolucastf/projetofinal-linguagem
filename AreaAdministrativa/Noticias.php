@@ -37,7 +37,7 @@ and open the template in the editor.
                         <li><a href="QuemSomos.php">Quem somos</a></li>
                         <li class="active"><a href="Noticias.php">Noticias</a></li>
                         <li><a href="Contato.php">Contato</a></li>
-                        <li><a href="#">Usuários</a></li>
+                        <li><a href="Usuarios.php">Usuários</a></li>
                         <li><a href="../index.php">Sair</a></li>
                     </ul>
                 </div>

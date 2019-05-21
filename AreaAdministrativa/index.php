@@ -59,23 +59,7 @@ and open the template in the editor.
                 $resp = "Boa noite, seja bem vindo a área administrativa.";}
                 echo "$resp";
                 ?>
-            </h1>
-            
-            <img src="../Imagem/site.png" alt=""/>
-            
-            <map name="Linguagens">
-                <!-- ESQUERDA -->
-                <area shape="rect" coords="80, 100, 160, 20" alt="Linguagem C" href="LinguagemC.php">
-                <area shape="rect" coords="160, 250, 260, 150" alt="Linguagem C#" href="LinguagemCSharp.php">
-                <area shape="rect" coords="80, 300, 160, 380" alt="Linguagem C++" href="LinguagemC++.php">
-                
-                <!-- DIREITA -->
-                <area shape="rect" coords="680, 80, 580, 150" alt="Linguagem Ruby" href="LinguagemRuby.php">
-                <area shape="rect" coords="810, 210, 710, 300" alt="Linguagem Ruby" href="LinguagemPython.php">
-                <area shape="rect" coords="690, 460, 630, 380" alt="Linguagem JAVA" href="LinguagemJava.php">
-                
-            </map>
-            
+            </h1>            
         </div>
         
                 <div id="rodape">
