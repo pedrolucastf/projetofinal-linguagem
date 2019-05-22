@@ -39,7 +39,18 @@ and open the template in the editor.
                         <li><a href="../AreaAdministrativa/QuemSomos.php">Quem somos</a></li>
                         <li><a href="Noticias.php">Noticias</a></li>
                         <li><a href="Contato.php">Contato</a></li>
-                        <li><a href="#">Usuários</a></li>
+                        <li><a href="Usuarios.php">Usuários</a></li>
+                        <li>
+                            <div class="dropdown">
+                            <a data-toggle="dropdown" aria-expanded="false" style="color: #777; line-height: 50px; display: block; float: left;">Linguagens</a>
+                            <span class="caret" style="margin-top: 29%;"></span>
+                            <ul class="dropdown-menu" style="margin: 20% auto;">
+                              <li><a href="#">HTML</a></li>
+                              <li><a href="#">CSS</a></li>
+                              <li><a href="#">JavaScript</a></li>
+                            </ul>
+                            </div>
+                        </li>
                         <li><a href="../index.php">Sair</a></li>
                     </ul>
                 </div>

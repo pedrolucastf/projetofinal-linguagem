@@ -28,11 +28,11 @@ and open the template in the editor.
                 <form action="#" method="GET">
                     <h1>Área Administrativa</h1>
                     <p>Digite seu login</p>
-                    <input placeholder="Digite seu login" type="text">
+                    <input placeholder="Digite seu login" type="text" name="usuario">
                     <br>
                     <br>
                     <p>Digite sua senha</p>
-                    <input placeholder="*****"type="password">
+                    <input placeholder="*****"type="password" name="senha">
                     <br>
                     <br>
                     <input class="btn btn-success" type="submit" value="Entrar">
@@ -41,3 +41,31 @@ and open the template in the editor.
             </div>
         </body>
 </html>
+
+<?php
+    if(isset($_POST['usuario']) && isset($_POST['senha']))
+    {
+        if(empty($_POST['usuario']) || empty($_POST['senha']))
+        {
+            echo "<script type='text/javascript'> alert ('Não deixe os campos em branco');</script>";
+        }
+        else
+        {
+            $usuario = $_POST['usuario'];
+            $senha = $_POST['senha'];
+            
+            $u = new Usuarios();
+            $resultado = $u->Login($usuario, $senha);
+            
+            if($resultado == true)
+            {
+                //entra na area adm
+                header("Location: http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa");
+            }
+            else
+            {
+                echo "<script type='text/javascript'> alert ('Usuário e/ou senha incorretos');</script>";
+            }
+        }
+    }
+?>
