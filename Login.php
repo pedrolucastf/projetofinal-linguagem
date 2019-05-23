@@ -1,3 +1,8 @@
+<?php
+    namespace Linguagem;
+    include 'Classes/Usuario.php';
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -25,7 +30,7 @@ and open the template in the editor.
     </head>
         <body>
             <div id="login">
-                <form action="#" method="GET">
+                <form action="#" method="POST">
                     <h1>Área Administrativa</h1>
                     <p>Digite seu login</p>
                     <input placeholder="Digite seu login" type="text" name="usuario">
@@ -54,7 +59,7 @@ and open the template in the editor.
             $usuario = $_POST['usuario'];
             $senha = $_POST['senha'];
             
-            $u = new Usuarios();
+            $u = new Usuario();
             $resultado = $u->Login($usuario, $senha);
             
             if($resultado == true)

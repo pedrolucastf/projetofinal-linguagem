@@ -1,5 +1,5 @@
 <?php
-namespace ProjetoFinal;
+    namespace Linguagem;
 
 class Usuario
 {
@@ -14,7 +14,7 @@ class Usuario
         Try
         {
             //String de conexão com o banco de dados.
-            $conexao = new \PDO("mysql:host=localhost; dbname=#", "root", "");
+            $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem", "root", "");
 
             //SQL que vou executar no banco.
             $sql = "insert into usuarios (nome, usuario, email, senha) VALUES (:nome, :usuario, :email, :senha)";
@@ -50,15 +50,15 @@ class Usuario
         {
             try
             {
-                $conexao = new \PDO("mysql:host=localhost; dbname=#","root","");
+                $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
 
-                $sql = "SELECT count(*) FROM usuarios WHERE usuario = :usuario AND senha = :senha";
+                $sql = "SELECT * FROM usuarios WHERE usuario = :usuario AND senha = :senha";
                 $preparar = $conexao->prepare($sql);
 
                 $preparar->bindValue(":usuario", $usuario);
                 $preparar->bindValue(":senha", $senha);
 
-                $senhaCriptografada = sha1(":senha", $senha);
+                $senhaCriptografada = sha1($senha);
                 $preparar->bindValue(":senha", $senhaCriptografada);
 
                 $resultado = $preparar->execute();

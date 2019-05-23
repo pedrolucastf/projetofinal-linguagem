@@ -36,10 +36,24 @@ and open the template in the editor.
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
-                        <li class="active"><a href="QuemSomos.php">Quem somos</a></li>
+                        <li class="active"><a href="../AreaAdministrativa/QuemSomos.php">Quem somos</a></li>
                         <li><a href="Noticias.php">Noticias</a></li>
                         <li><a href="Contato.php">Contato</a></li>
-                        <li><a href="#">Usuários</a></li>
+                        <li><a href="Usuarios.php">Usuários</a></li>
+                        <li>
+                            <div class="dropdown">
+                            <a data-toggle="dropdown" aria-expanded="false" style="color: #777; line-height: 50px; display: block; float: left;">Linguagens</a>
+                            <span class="caret" style="margin-top: 29%;"></span>
+                            <ul class="dropdown-menu" style="margin: 20% auto;">
+                              <li><a href="LinguagemC-Admin.php">C</a></li>
+                              <li><a href="LinguagemCSharp-Admin.php">C#</a></li>
+                              <li><a href="LinguagemCMaisMais-Admin.php">C++</a></li>
+                              <li><a href="LinguagemRuby-Admin.php">Ruby</a></li>
+                              <li><a href="LinguagemPython-Admin.php">Python</a></li>
+                              <li><a href="LinguagemJava-Admin.php">Java</a></li>
+                            </ul>
+                            </div>
+                        </li>
                         <li><a href="../index.php">Sair</a></li>
                     </ul>
                 </div>
