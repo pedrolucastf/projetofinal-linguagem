@@ -52,7 +52,7 @@ and open the template in the editor.
     {
         if(empty($_POST['usuario']) || empty($_POST['senha']))
         {
-            echo "<script type='text/javascript'> alert ('Não deixe os campos em branco');</script>";
+            echo "<script type='text/javascript'> alert ('Não deixe os campos em branco!');</script>";
         }
         else
         {
@@ -69,7 +69,7 @@ and open the template in the editor.
             }
             else
             {
-                echo "<script type='text/javascript'> alert ('Usuário e/ou senha incorretos');</script>";
+                echo "<script type='text/javascript'> alert ('Usuário e/ou senha incorretos.');</script>";
             }
         }
     }

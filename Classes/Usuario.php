@@ -2,13 +2,7 @@
     namespace Linguagem;
 
 class Usuario
-{
-    private $id;
-    private $nome;
-    private $usuario;
-    private $email;
-    private $senha;
-    
+{    
     public function Inserir($nome, $usuario, $email, $senha)
     {
         Try
@@ -52,7 +46,7 @@ class Usuario
             {
                 $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
 
-                $sql = "SELECT * FROM usuarios WHERE usuario = :usuario AND senha = :senha";
+                $sql = "SELECT count(*) FROM usuarios WHERE usuario = :usuario AND senha = :senha";
                 $preparar = $conexao->prepare($sql);
 
                 $preparar->bindValue(":usuario", $usuario);
@@ -61,9 +55,10 @@ class Usuario
                 $senhaCriptografada = sha1($senha);
                 $preparar->bindValue(":senha", $senhaCriptografada);
 
-                $resultado = $preparar->execute();
+                $preparar->execute();
+                $resultado = $preparar->fetch();
 
-                if($resultado == true)
+                if($resultado[0] == 1)
                 {
                     return true;
                 }
@@ -75,7 +70,46 @@ class Usuario
             catch (\PDOException $e)
             {
                 throw new Exception("Ocorreu um ERRO: "+$e);
-                return false;
             }
         }
+        public function ListarTodos()
+    {
+        try
+        {
+                $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
+
+                $sql = "SELECT * FROM usuarios";
+
+                $preparar = $conexao->prepare($sql);
+                $preparar->execute();
+
+                $resultado = $preparar->fetchAll(\PDO::FETCH_OBJ);
+
+                return $resultado;
+        }
+        catch (\PDOException $e)
+        {
+            throw new Exception("Ops... Erro: "+$e->getMessage());
+        }
+    }
+    public function Deletar($id)
+    {
+        $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
+        
+        $sql = "DELETE FROM usuarios WHERE id = :id";
+        
+        $preparar = $conexao->prepare($sql);
+        $preparar->bindValue(":id", $id);
+        
+        $resultado = $preparar->execute();
+        
+        if($resultado == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

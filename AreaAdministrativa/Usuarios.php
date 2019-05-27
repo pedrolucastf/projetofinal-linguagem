@@ -84,8 +84,6 @@ and open the template in the editor.
                     <br>
                     <div id="buttonNovoUsuario">
                     <input name="opcao"type="submit" value="INSERIR">
-                    <input name="opcao"type="submit" value="ATUALIZAR">
-                    <input name="opcao"type="submit" value="DELETAR">
                     </div>
                 </form>
             </div>
@@ -100,24 +98,23 @@ and open the template in the editor.
                         <td colspan="2">OPÇOES</td>
                     </tr>
 
-                    <tr>
-                        <td>1</td>
-                        <td>Cesar</td>
-                        <td>cesar@cesar.com</td>
-                        <td>cesar</td>
-                        <td>[editar]</td>
-                        <td>[excluir]</td>
-                    </tr>
-
-                     <tr>
-                        <td>2</td>
-                        <td>Pedro</td>
-                        <td>pedro@pedro.com</td>
-                        <td>pedro</td>
-                        <td>[editar]</td>
-                        <td>[excluir]</td>
-                    </tr>
-                    </table>            
+                <?php
+                $u = new Usuario();
+                $usuarios = $u->ListarTodos();
+                
+                foreach ($usuarios as $key ) 
+                {
+                    echo "<tr>"
+                            ."<td>".$key->id."</td>"
+                            ."<td>".$key->nome."</td>"
+                            ."<td>".$key->usuario."</td>"
+                            ."<td>".$key->email."</td>"
+                            ."<td><a href='#' class='btn btn-warning'>Editar</a> </td>"
+                            ."<td><a onclick=' return confirm(&quot; Tem certeza que deseja excluir o usuário? &quot;);' href='?id=".$key->id."&acao=deletar' class='btn btn-danger'>Excluir</a></td>"
+                    ."</tr>";
+                }
+             ?>
+            </table>    
         </div>
         
                 <div id="rodape">
@@ -155,14 +152,43 @@ and open the template in the editor.
             echo $resultado;
             
            if($resultado == true)
-           {
+           {    
+               echo "<script type='text/javascript'>alert('Cadastro realizado com sucesso!');</script>";  
                header("Location: http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/Usuarios.php");
-               echo "<script type='text/javascript'> alert ('Cadastro realizado com sucesso!');</script>";               
+                        
            }
            else
            {
-               echo "<script type='text/javascript'> alert ('Houve um erro na hora de cadastrar um novo usuário.');</script>";
+               echo "<script type='text/javascript'>alert('Houve um erro na hora de cadastrar um novo usuário!');</script>";  
            }
         }        
     }
     
+    if(isset($_GET['id']) && isset($_GET['acao']))
+    {
+            $id = $_GET['id'];
+            $acao = $_GET['acao'];
+            
+            switch ($acao)
+            {
+                case "deletar":
+                    $u = new Usuario();
+                    $resultado = $u->Deletar($id);
+                    
+                    if($resultado == 1)
+                    {
+                         echo "<script type='text/javascript'> alert ('Usuário removido com sucesso!');</script>";
+                         echo "<script type='text/javascript'> window.location.href='http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/Usuarios.php';</script>";
+                    }
+                    else
+                    {
+                         echo "<script type='text/javascript'> alert ('Erro ao remover o usuário!');</script>";
+                    }
+                         
+                break;
+                    
+                    
+                case "editar":
+                    break;
+            }
+    }

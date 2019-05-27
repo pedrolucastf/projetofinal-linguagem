@@ -57,14 +57,13 @@ and open the template in the editor.
                      <h3><b>Historia</b></h3>
                      <p>
 
-                     </p>
+<!--                     </p>
                      <h3><b>Visão Geral</b></h3>
-                     <p>
+                     <p>-->
 
                      </p>
                      <h3><b>Olá mundo</b></h3>
                      <p>
-
                      </p>
                      <br>
                      <br>

@@ -101,6 +101,12 @@ body
     height: 50px;
 }
 
+#corpo .Linguagem #textoLinguagem p img
+{
+        margin: 0% 25%;
+    width: 50%;
+}
+
 #rodape
 {
     margin: 0 0 10%;
