@@ -94,13 +94,11 @@ class Usuario
     }
     public function Deletar($id)
     {
-        $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
-        
+        $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");  
         $sql = "DELETE FROM usuarios WHERE id = :id";
         
         $preparar = $conexao->prepare($sql);
         $preparar->bindValue(":id", $id);
-        
         $resultado = $preparar->execute();
         
         if($resultado == 1)
@@ -112,4 +110,46 @@ class Usuario
             return false;
         }
     }
+    
+    public function Atualizar($id, $nome, $usuario, $email, $senha)
+    {
+        try
+        {
+        $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem", "root", "");
+        $sql = "update usuarios set nome= :nome, usuario= :usuario, email= :email, senha= :senha where id= :id";
+        
+        $preparar = $conexao->prepare($sql);
+        $preparar->bindValue(":id", $id);
+        $preparar->bindValue(":nome", $nome);
+        $preparar->bindValue(":usuario", $usuario);
+        $preparar->bindValue(":email", $email);
+        
+        $senhaCriptografada = sha1($senha);
+        $preparar->bindValue(":senha", $senhaCriptografada);
+        
+        $resultado = $preparar->execute();
+        if ($resultado == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+        catch (\PDOException $e)
+        {
+        throw new Exception("Algo deu errado!".$e->getMessage());
+        }
+    }
 }
+
+//Teste do método Atualizar
+//$u = new Usuario();
+//$resultado = $u->Atualizar(19, 'nome', 'usuario', 'email', 'senha');
+//echo $resultado;
+
+//$u = new Usuario();
+//$resultado = $u->Deletar(22);
+//echo $resultado;
+

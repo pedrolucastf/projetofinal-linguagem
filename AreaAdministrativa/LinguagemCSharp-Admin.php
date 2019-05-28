@@ -59,3 +59,33 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
+        <div id="corpo">
+            <div id="corpoLinguagem">
+            <img src="../Imagem/csharp.png" alt=""/>
+            <h3><b>O que é?</b></h3>
+            <br>
+            <input name="textoOqueLinguagem" type="text">
+            <br>
+            <br>
+            <h3><b>Historia</b></h3>
+            <br>
+            <input name="textoHistoriaLinguagem" type="text">
+            <br>
+            <br>
+            <h3><b>HelloWorld</b></h3>
+            <br>
+            <input name="textoOlaMundo" type="text">
+            <br>
+            <br>
+            </div>
+            <div id="botaoLinguagem">
+            <input id="AtualizarBtn" class="btn btn-warning" name="opcao"type="submit" value="ATUALIZAR">
+            <input onclick="Cancelar();" id="CancelarBtn" class="btn btn-danger" name="opcao"type="submit" value="CANCELAR">
+            </div>                
+        </div>
+        
+        <div id="rodape">
+            <p> Desde 2019 | Todos os direitos reservados. </p>
+        </div>
+    </body>
+</html>

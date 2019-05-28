@@ -51,7 +51,7 @@ body
 
 #corpo #FormQuemSomos #inputQuemSomos
 {
-    margin: 0 43% auto;
+    margin: 0 44.5% auto;
 }
 
 #corpo table.table.table-striped tbody tr td textArea
@@ -105,6 +105,32 @@ body
 {
         margin: 0% 25%;
     width: 50%;
+}
+
+#corpo #corpoLinguagem input
+{
+    width: 60%;
+    height: 300px;
+    margin: 0 20%;
+}
+
+#corpo #corpoLinguagem h3
+{
+    margin: 0 47%;
+    text-align: center;
+}
+
+#corpo #botaoLinguagem
+{
+    margin: 1% 44.5% 10px;
+
+}
+
+#corpo #corpoLinguagem img
+{
+    margin: -20px auto;
+    width: 15%;
+    padding: 2%;
 }
 
 #rodape

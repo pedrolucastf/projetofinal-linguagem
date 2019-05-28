@@ -42,7 +42,7 @@ and open the template in the editor.
                         <li><a href="Usuarios.php">Usuários</a></li>
                         <li>
                             <div class="dropdown">
-                            <a data-toggle="dropdown" aria-expanded="false" style="color: #777; line-height: 50px; display: block; float: left;">Linguagens</a>
+                                <a data-toggle="dropdown" aria-expanded="false" style="color: #777; line-height: 50px; display: block; float: left;">Linguagens</a>
                             <span class="caret" style="margin-top: 29%;"></span>
                             <ul class="dropdown-menu" style="margin: 20% auto;">
                               <li><a href="LinguagemC-Admin.php">C</a></li>
@@ -59,3 +59,34 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
+        
+        <div id="corpo">
+            <div id="corpoLinguagem">
+            <img src="../Imagem/C.png" alt=""/>
+            <h3><b>O que é?</b></h3>
+            <br>
+            <input name="textoOqueLinguagem" type="text">
+            <br>
+            <br>
+            <h3><b>Historia</b></h3>
+            <br>
+            <input name="textoHistoriaLinguagem" type="text">
+            <br>
+            <br>
+            <h3><b>HelloWorld</b></h3>
+            <br>
+            <input name="textoOlaMundo" type="text">
+            <br>
+            <br>
+            </div>
+            <div id="botaoLinguagem">
+            <input id="AtualizarBtn" class="btn btn-warning" name="opcao"type="submit" value="ATUALIZAR">
+            <input onclick="Cancelar();" id="CancelarBtn" class="btn btn-danger" name="opcao"type="submit" value="CANCELAR">
+            </div>                
+        </div>
+        
+        <div id="rodape">
+            <p> Desde 2019 | Todos os direitos reservados. </p>
+        </div>
+    </body>
+</html>

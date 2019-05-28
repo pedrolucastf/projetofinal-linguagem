@@ -66,9 +66,8 @@ and open the template in the editor.
                     <textarea></textarea>
                     <br>
                     <div id="inputQuemSomos">
-                    <input name="opcao" type="submit" value="INSERIR">
-                    <input name="opcao" type="submit" value="ATUALIZAR">
-                    <input name="opcao" type="submit" value="DELETAR">
+                    <input id="AtualizarBtn" class="btn btn-warning" name="opcao"type="submit" value="ATUALIZAR">
+                    <input onclick="Cancelar();" id="CancelarBtn" class="btn btn-danger" name="opcao"type="submit" value="CANCELAR">
                     </div>
                 </form>
             </div>
