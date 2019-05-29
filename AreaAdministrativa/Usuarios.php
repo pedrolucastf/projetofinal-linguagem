@@ -138,7 +138,7 @@ and open the template in the editor.
                     ."</tr>";
                 }
              ?>
-            </table>    
+                </table>    
         </div>
         
                 <div id="rodape">

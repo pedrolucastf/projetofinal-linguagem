@@ -1,3 +1,10 @@
+<?php
+    namespace Linguagem;
+    include './Classes/QuemSomos.php';
+    header("Content-Type: text/html; charset=ISO-8859-1",true);    
+?>
+
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -37,24 +44,23 @@ and open the template in the editor.
                         <li class="active"><a href="#">Quem somos</a></li>
                         <li><a href="Noticias.php">Noticias</a></li>
                         <li><a href="Contato.php">Contato</a></li>
-                        <li><a href="Login.php">Área Administrativa</a></li>
+                        <li><a href="Login.php"><?php echo utf8_decode("Área Administrativa"); ?></a></li>
                     </ul>
                 </div>
             </div>
         </div>
         
-        <div id="corpo">
-            <h1>Quem somos</h1>
-            <div id="textoQuemSomos"
-            <p>
-                O site foi criado no ano de 2019 pelo Técnico em Informática Pedro Lucas de Oliveira Toffoli (formado pelo Senac Botucatu) com o objetivo de auxiliar estudantes e profissionais de tecnologia na hora de aprender uma nova linguagem de programação com informações básicas sobre as principais linguagens de programação disponível no mercado.  
-            </p>
-            <p>
-                 A ideia surgiu após ver necessidade em encontrar informações sobre uma linguagem de informação em um só site, com isso, foi desenvolvido o site com o objetivo de otimizar tudo em um só lugar que contém um pouco da história, notícias, breves tutoriais e um link que direciona você para um compilador para colocar em prática tudo que você aprendeu.
-            </p>
-            </div>
-        </div>
-        
+            <div id="corpo">                 
+                    <h1>Quem Somos</h1>
+                    <br>
+                    <P>
+                        <?php                            
+                            $q = new QuemSomos();
+                            $quemsomos = $q->ListarQuemSomos();
+                            echo $quemsomos->texto;
+                        ?>
+                    </p>
+            </div>       
         <div id="rodape">
             <p> Desde 2019 | Todos os direitos reservados.</p>
         </div>

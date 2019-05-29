@@ -24,6 +24,13 @@ body
     font-weight: bold;
 }
 
+#corpo p 
+{
+        margin: 0 5%;
+    text-align: justify;
+    font-size: 22px;
+}
+
 #corpo img
 {
     margin: 0% auto;
@@ -38,14 +45,14 @@ body
     padding: 2%;
 }
 
-#corpo #textoQuemSomos
+/*#corpo #textoQuemSomos
 {
     max-width: 96%;
     text-align: justify;
     margin: 0 5%;
     padding: 2%;
     font-size: 20px;
-}
+}*/
 
 #corpo #textoLinguagem
 {

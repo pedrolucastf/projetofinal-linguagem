@@ -1,3 +1,9 @@
+<?php
+    namespace Linguagem;
+    include '../Classes/QuemSomos.php';
+    header("Content-Type: text/html; charset=ISO-8859-1",true);
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -23,6 +29,18 @@ and open the template in the editor.
         <link href="../CSS/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="../JS/all.min.js" type="text/javascript"></script>
         
+        <script type="text/javascript">
+            
+            function Cancelar()
+            {
+                var acao = confirm ("Tem certeza?\nEssa operação não pode ser desfeita!");
+                if(acao === true)
+                {
+                    window.location.reload();
+                }
+            }
+        </script>
+
         
     </head>
     <body>
@@ -39,7 +57,7 @@ and open the template in the editor.
                         <li class="active"><a href="../AreaAdministrativa/QuemSomos.php">Quem somos</a></li>
                         <li><a href="Noticias.php">Noticias</a></li>
                         <li><a href="Contato.php">Contato</a></li>
-                        <li><a href="Usuarios.php">Usuários</a></li>
+                        <li><a href="Usuarios.php"><?php echo utf8_decode("Usuários"); ?></a></li>
                         <li>
                             <div class="dropdown">
                             <a data-toggle="dropdown" aria-expanded="false" style="color: #777; line-height: 50px; display: block; float: left;">Linguagens</a>
@@ -63,7 +81,13 @@ and open the template in the editor.
         <div id="corpo">                 
                 <form id="FormQuemSomos" action="<?php echo $_SERVER['PHP_SELF'];?>" method="GET">
                     <h1>Quem Somos</h1>
-                    <textarea></textarea>
+                    <textarea>
+                        <?php
+                            $q = new QuemSomos();
+                            $quemsomos = $q->ListarQuemSomos();
+                            echo $quemsomos->texto;
+                        ?>
+                    </textarea>
                     <br>
                     <div id="inputQuemSomos">
                     <input id="AtualizarBtn" class="btn btn-warning" name="opcao"type="submit" value="ATUALIZAR">
@@ -77,3 +101,42 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+<?php
+            if(isset($_POST['id'])&&
+                       isset ($_POST['texto']) &&
+                       isset($_POST['opcao']))
+            {
+                    if(empty($_POST['texto']))
+                        {
+                            echo "<script type='text/javascript'> alert ('Não deixe o campo em branco!');</script>";
+                        }
+                        else
+                        {  
+                        $id = $_POST['id'];
+                        $texto = $_POST['texto']; 
+                        $opcao = $_POST['opcao'];
+
+                        $q = new QuemSomos();
+
+                        switch ($opcao)
+                        {
+                        case "ATUALIZAR":
+                        $resultado = $q->AtualizarQuemSomos($id, $texto);
+                        if($resultado == 1)
+                        {
+                             echo "<script type='text/javascript'>"
+                                    ."alert('Quem somos atualizado com sucesso!');"
+                                     ."window.location.href='http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/QuemSomos.php';"
+                                  ."</script>";
+                        }
+                        else
+                        {
+                            echo "<script type='text/javascript'>"
+                                    ."alert('Algo deu errado');"
+                                    ."window.location.href='http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/QuemSomos.php';"
+                                  ."</script>";
+                        }  
+                    break;            
+                }
+                }
+            }
