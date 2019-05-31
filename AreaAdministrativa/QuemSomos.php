@@ -29,11 +29,10 @@ and open the template in the editor.
         <link href="../CSS/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="../JS/all.min.js" type="text/javascript"></script>
         
-        <script type="text/javascript">
-            
+        <script type="text/javascript">         
             function Cancelar()
             {
-                var acao = confirm ("Tem certeza?\nEssa operação não pode ser desfeita!");
+                var acao = confirm ("<?php echo utf8_decode("Tem certeza? \\n(Essa operação não pode ser desfeita!)"); ?>");
                 if(acao === true)
                 {
                     window.location.reload();
@@ -79,9 +78,9 @@ and open the template in the editor.
         </div>
         
         <div id="corpo">                 
-                <form id="FormQuemSomos" action="<?php echo $_SERVER['PHP_SELF'];?>" method="GET">
+                <form id="FormQuemSomos" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                     <h1>Quem Somos</h1>
-                    <textarea>
+                    <textarea id="campoQuemSomos" name="texto">
                         <?php
                             $q = new QuemSomos();
                             $quemsomos = $q->ListarQuemSomos();
@@ -102,41 +101,38 @@ and open the template in the editor.
     </body>
 </html>
 <?php
-            if(isset($_POST['id'])&&
-                       isset ($_POST['texto']) &&
-                       isset($_POST['opcao']))
+    if(isset($_POST['texto']) && isset($_POST['opcao']))
+    {
+        if(empty($_POST['texto']))
+        {
+            echo "<script type='text/javascript'> alert ('Não deixe os campos em branco!');</script>";
+        }
+        else
+        {  
+        $texto = $_POST['texto'];
+        $opcao = $_POST['opcao'];
+
+        $q = new QuemSomos();
+
+            switch ($opcao)
             {
-                    if(empty($_POST['texto']))
-                        {
-                            echo "<script type='text/javascript'> alert ('Não deixe o campo em branco!');</script>";
-                        }
-                        else
-                        {  
-                        $id = $_POST['id'];
-                        $texto = $_POST['texto']; 
-                        $opcao = $_POST['opcao'];
-
-                        $q = new QuemSomos();
-
-                        switch ($opcao)
-                        {
-                        case "ATUALIZAR":
-                        $resultado = $q->AtualizarQuemSomos($id, $texto);
-                        if($resultado == 1)
-                        {
-                             echo "<script type='text/javascript'>"
-                                    ."alert('Quem somos atualizado com sucesso!');"
-                                     ."window.location.href='http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/QuemSomos.php';"
-                                  ."</script>";
-                        }
-                        else
-                        {
-                            echo "<script type='text/javascript'>"
-                                    ."alert('Algo deu errado');"
-                                    ."window.location.href='http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/QuemSomos.php';"
-                                  ."</script>";
-                        }  
-                    break;            
-                }
-                }
+                case "ATUALIZAR":
+                    $resultado = $q->AtualizarQuemSomos($texto);
+                    if($resultado == 1)
+                    {
+                         echo "<script type='text/javascript'>"
+                                ."alert('Quem somos atualizado com sucesso!');"
+                                 ."window.location.href='http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/QuemSomos.php';"
+                              ."</script>";
+                    }
+                    else
+                    {
+                        echo "<script type='text/javascript'>"
+                                ."alert('Algo deu errado');"
+                                ."window.location.href='http://localhost/ProjetoFinal-Linguagem/AreaAdministrativa/QuemSomos.php';"
+                              ."</script>";
+                    }  
+                break;            
             }
+        }
+    }

@@ -25,15 +25,14 @@
     }
     
     
-    public function AtualizarQuemSomos($id, $texto)
+    public function AtualizarQuemSomos($texto)
     {
         try
         {
         $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem", "root", "");
-        $sql = "update quemsomos set texto= :texto";
+        $sql = "UPDATE quemsomos SET texto = :texto";
         
         $preparar = $conexao->prepare($sql);
-        $preparar->bindValue(":id", $id);
         $preparar->bindValue(":texto", $texto);       
         
         $resultado = $preparar->execute();
@@ -52,3 +51,9 @@
         }
     }
 }
+
+
+//Teste do método Atualizar
+//$quemsomos = new QuemSomos();
+//$resultado = $quemsomos->AtualizarQuemSomos('OLAAAAAAAAA');
+//echo $resultado;
