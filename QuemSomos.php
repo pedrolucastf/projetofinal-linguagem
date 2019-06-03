@@ -42,8 +42,6 @@ and open the template in the editor.
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
                         <li class="active"><a href="#">Quem somos</a></li>
-                        <li><a href="Noticias.php">Noticias</a></li>
-                        <li><a href="Contato.php">Contato</a></li>
                         <li><a href="Login.php"><?php echo utf8_decode("Área Administrativa"); ?></a></li>
                     </ul>
                 </div>

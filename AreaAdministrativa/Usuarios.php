@@ -64,8 +64,6 @@ and open the template in the editor.
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
                         <li><a href="../AreaAdministrativa/QuemSomos.php">Quem somos</a></li>
-                        <li><a href="Noticias.php">Noticias</a></li>
-                        <li><a href="Contato.php">Contato</a></li>
                         <li class="active"><a href="Usuarios.php">Usuários</a></li>
                         <li>
                             <div class="dropdown">

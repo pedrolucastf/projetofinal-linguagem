@@ -23,6 +23,17 @@ and open the template in the editor.
         <link href="../CSS/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="../JS/all.min.js" type="text/javascript"></script>
         
+        <script type="text/javascript">         
+            function Cancelar()
+            {
+                var acao = confirm ("Tem certeza? \n(Essa operação não pode ser desfeita!");
+                if(acao === true)
+                {
+                    window.location.reload();
+                }
+            }
+        </script>
+        
         
     </head>
     <body>
@@ -37,8 +48,6 @@ and open the template in the editor.
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Inicio</a></li>
                         <li><a href="../AreaAdministrativa/QuemSomos.php">Quem somos</a></li>
-                        <li><a href="Noticias.php">Noticias</a></li>
-                        <li><a href="Contato.php">Contato</a></li>
                         <li><a href="Usuarios.php">Usuários</a></li>
                         <li>
                             <div class="dropdown">
