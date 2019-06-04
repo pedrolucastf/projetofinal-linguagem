@@ -153,3 +153,8 @@ class Usuario
 //$resultado = $u->Deletar(22);
 //echo $resultado;
 
+//Teste do método Inserir
+//$u - new Usuario();
+//$resultado = $u->Inserir('Pedro', 'pedro', 'pedro@pedro.com', '1234');
+//echo $resultado;
+

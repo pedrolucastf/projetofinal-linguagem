@@ -49,14 +49,14 @@ and open the template in the editor.
             
             <map name="Linguagens">
                 <!-- ESQUERDA -->
-                <area shape="rect" coords="80, 100, 160, 20" alt="Linguagem C" href="LinguagemC.php">
-                <area shape="rect" coords="160, 250, 260, 150" alt="Linguagem C#" href="LinguagemCSharp.php">
-                <area shape="rect" coords="80, 300, 160, 380" alt="Linguagem C++" href="LinguagemC++.php">
+                <area shape="rect" coords="80, 100, 160, 20" alt="Linguagem C" href="Linguagens.php?id=1">
+                <area shape="rect" coords="160, 250, 260, 150" alt="Linguagem C#" href="Linguagens.php?id=4">
+                <area shape="rect" coords="80, 300, 160, 380" alt="Linguagem C++" href="Linguagens.php?id=2">
                 
                 <!-- DIREITA -->
-                <area shape="rect" coords="680, 80, 580, 150" alt="Linguagem Ruby" href="LinguagemRuby.php">
-                <area shape="rect" coords="810, 210, 710, 300" alt="Linguagem Ruby" href="LinguagemPython.php">
-                <area shape="rect" coords="690, 460, 630, 380" alt="Linguagem JAVA" href="LinguagemJava.php">
+                <area shape="rect" coords="680, 80, 580, 150" alt="Linguagem Ruby" href="Linguagens.php?id=3">
+                <area shape="rect" coords="810, 210, 710, 300" alt="Linguagem Ruby" href="Linguagens.php?id=5">
+                <area shape="rect" coords="690, 460, 630, 380" alt="Linguagem JAVA" href="Linguagens.php?id=6">
                 
             </map>
             

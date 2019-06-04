@@ -41,7 +41,7 @@ body
 #corpo #Linguagem img
 {
     margin: -20px auto;
-    width: 15%;
+    width: -20%;
     padding: 2%;
 }
 
@@ -60,6 +60,18 @@ body
     text-align: center;
     margin: 0 5%;
     padding: 2%;
+}
+
+#corpo #corpoLinguagem form p
+{
+        margin: 0 5%;
+    text-align: justify;
+    font-size: 22px;
+}
+
+#corpo #corpoLinguagem form img
+{
+        width: 200px;
 }
 
 #corpo .noticia

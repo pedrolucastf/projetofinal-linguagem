@@ -107,12 +107,12 @@ body
     width: 50%;
 }
 
-#corpo #corpoLinguagem input
+/*#corpo #corpoLinguagem input
 {
     width: 60%;
     height: 300px;
     margin: 0 20%;
-}
+}*/
 
 #corpo #corpoLinguagem h3
 {
@@ -131,6 +131,13 @@ body
     margin: -20px auto;
     width: 15%;
     padding: 2%;
+}
+
+#corpo #corpoLinguagem form textarea
+{
+    width: 60%;
+    margin: 0 20%;
+    height: 500px;
 }
 
 #rodape

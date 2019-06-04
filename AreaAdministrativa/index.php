@@ -43,12 +43,12 @@ and open the template in the editor.
                             <a data-toggle="dropdown" aria-expanded="false" style="color: #777; line-height: 50px; display: block; float: left;">Linguagens</a>
                             <span class="caret" style="margin-top: 29%;"></span>
                             <ul class="dropdown-menu" style="margin: 20% auto;">
-                              <li><a href="LinguagemC-Admin.php">C</a></li>
-                              <li><a href="LinguagemCSharp-Admin.php">C#</a></li>
-                              <li><a href="LinguagemCMaisMais-Admin.php">C++</a></li>
-                              <li><a href="LinguagemRuby-Admin.php">Ruby</a></li>
-                              <li><a href="LinguagemPython-Admin.php">Python</a></li>
-                              <li><a href="LinguagemJava-Admin.php">Java</a></li>
+                              <li><a href="Linguagens.php?id=1">C</a></li>
+                              <li><a href="Linguagens.php?id=4">C#</a></li>
+                              <li><a href="Linguagens.php?id=2">C++</a></li>
+                              <li><a href="Linguagens.php?id=3">Ruby</a></li>
+                              <li><a href="Linguagens.php?id=5">Python</a></li>
+                              <li><a href="Linguagens.php?id=6">Java</a></li>
                             </ul>
                             </div>
                         </li>

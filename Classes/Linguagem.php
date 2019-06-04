@@ -3,15 +3,16 @@
     
     class Linguagem
     {
-        public function ListarOque()
+        public function ListarLinguagem($id)
     {
         try
         {
                 $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
 
-                $sql = "SELECT oque FROM linguagem_c";
+                $sql = "SELECT * FROM linguagem where id= :id";
 
                 $preparar = $conexao->prepare($sql);
+                $preparar->bindValue(':id', $id);
                 $preparar->execute();
 
                 $resultado = $preparar->fetch(\PDO::FETCH_OBJ);
@@ -24,59 +25,15 @@
         }
     }
     
-    public function ListarHistoria()
-    {
-        try
-        {
-                $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
-
-                $sql = "SELECT historia FROM linguagem_c";
-
-                $preparar = $conexao->prepare($sql);
-                $preparar->execute();
-
-                $resultado = $preparar->fetch(\PDO::FETCH_OBJ);
-
-                return $resultado;
-        }
-        catch (\PDOException $e)
-        {
-            throw new Exception("Ops... Erro: "+$e->getMessage());
-        }
-    }
-    
-    public function ListarHelloWorld()
-    {
-        try
-        {
-                $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem","root","");
-
-                $sql = "SELECT helloworld FROM linguagem_c";
-
-                $preparar = $conexao->prepare($sql);
-                $preparar->execute();
-
-                $resultado = $preparar->fetch(\PDO::FETCH_OBJ);
-
-                return $resultado;
-        }
-        catch (\PDOException $e)
-        {
-            throw new Exception("Ops... Erro: "+$e->getMessage());
-        }
-    }
-    
-    
-    public function AtualizarLinguagem($id, $nome, $oque, $historia, $helloworld)
+    public function Atualizar($id, $oque, $historia, $helloworld)
     {
         try
         {
         $conexao = new \PDO("mysql:host=localhost; dbname=projetofinal-linguagem", "root", "");
-        $sql = "UPDATE linguagem SET nome= :nome, oque = :oque, historia= :historia, helloworld= :helloworld where id= :id";
+        $sql = "UPDATE linguagem SET oque = :oque, historia= :historia, helloworld= :helloworld where id = :id";
         
         $preparar = $conexao->prepare($sql);
         $preparar->bindValue(":id", $id);  
-        $preparar->bindValue(":nome", $nome);
         $preparar->bindValue(":oque", $oque);   
         $preparar->bindValue(":historia", $historia);   
         $preparar->bindValue(":helloworld", $helloworld);   
@@ -102,5 +59,10 @@
 
 //Teste do método Atualizar
 //$l = new Linguagem();
-//$resultado = $l->AtualizarLinguagem(1, 'OLOQUINHO', 'CARA', 'BOLA', 'TRES DOIS UM');
+//$resultado = $l->Atualizar(1, '3133432135', '351316841315,1321', 'TRES DOIS UM6841313541321');
 //echo $resultado;
+
+//TESTE do metodo ListarLinguagem
+//$l = new Linguagem();
+//$resultado = $l->ListarLinguagem(1);
+//print_r($resultado);
