@@ -64,9 +64,15 @@ body
 
 #corpo #corpoLinguagem form p
 {
-        margin: 0 5%;
+        margin: 2% 5%;
     text-align: justify;
     font-size: 22px;
+}
+
+#corpo #corpoLinguagem form pre
+{
+    width: 70%;
+    margin: 0% auto;
 }
 
 #corpo #corpoLinguagem form img

@@ -79,7 +79,7 @@ and open the template in the editor.
                                     }
                             ?>
                     " alt="LOGO LINGUAGEM"/>
-                    <h1>Quem Somos</h1>
+                    <h1>O que</h1>
                     <br>
                     <P>
                         <?php                            
@@ -88,7 +88,7 @@ and open the template in the editor.
                             echo $linguagem->oque;
                         ?>
                     </p>
-                    <h1>Quem Somos</h1>
+                    <h1>Historia</h1>
                     <br>
                     <P>
                         <?php                            
@@ -97,15 +97,15 @@ and open the template in the editor.
                             echo $linguagem->historia;
                         ?>
                     </p>
-                    <h1>Quem Somos</h1>
+                    <h1>HelloWorld</h1>
                     <br>
-                    <P>
+                    <pre>
                         <?php                            
                             $l = new Linguagem();
                             $linguagem = $l->ListarLinguagem($id);
                             echo $linguagem->helloworld;
                         ?>
-                    </p>
+                    </pre>
                     
                     </form>
                 </div>                        
